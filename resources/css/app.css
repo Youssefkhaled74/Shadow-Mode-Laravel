@@ -1,0 +1,115 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --shell-bg: #f4f7fb;
+        --shell-panel: #ffffff;
+        --shell-text: #0f172a;
+        --shell-muted: #5f6d89;
+        --shell-border: #d4d9e6;
+        --brand: #0d9488;
+    }
+
+    :root.dark {
+        --shell-bg: #050816;
+        --shell-panel: #0d1429;
+        --shell-text: #e6edf8;
+        --shell-muted: #9fb1d4;
+        --shell-border: #22304b;
+        --brand: #22d3ee;
+    }
+
+    body {
+        font-family: 'Manrope', sans-serif;
+        background: var(--shell-bg);
+        color: var(--shell-text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: 'Space Grotesk', sans-serif;
+    }
+}
+
+@layer components {
+    .grid-overlay {
+        background-image: linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    .glass {
+        @apply rounded-2xl border border-shell bg-panel backdrop-blur-xl;
+    }
+}
+
+@layer utilities {
+    .bg-shell {
+        background-color: var(--shell-bg);
+    }
+
+    .bg-panel {
+        background-color: var(--shell-panel);
+    }
+
+    .text-shell {
+        color: var(--shell-text);
+    }
+
+    .text-muted {
+        color: var(--shell-muted);
+    }
+
+    .border-shell {
+        border-color: var(--shell-border);
+    }
+
+    .from-brand-500 {
+        --tw-gradient-from: var(--brand);
+        --tw-gradient-to: rgb(13 148 136 / 0);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    }
+
+    .to-cyan-500 {
+        --tw-gradient-to: #0ea5e9;
+    }
+
+    .bg-brand-500\/20 {
+        background-color: color-mix(in srgb, var(--brand) 20%, transparent);
+    }
+
+    .bg-brand-500\/30 {
+        background-color: color-mix(in srgb, var(--brand) 30%, transparent);
+    }
+
+    .text-brand-300 {
+        color: color-mix(in srgb, var(--brand) 70%, white);
+    }
+
+    .text-brand-100 {
+        color: color-mix(in srgb, var(--brand) 35%, white);
+    }
+
+    .ring-brand-400\/50 {
+        --tw-ring-color: color-mix(in srgb, var(--brand) 50%, transparent);
+    }
+
+    .bg-brand-300 {
+        background-color: color-mix(in srgb, var(--brand) 65%, white);
+    }
+
+    .hover\:bg-brand-400\/50:hover {
+        background-color: color-mix(in srgb, var(--brand) 45%, transparent);
+    }
+
+    .shadow-brand-900\/30 {
+        --tw-shadow-color: color-mix(in srgb, var(--brand) 30%, #020617);
+        --tw-shadow: var(--tw-shadow-colored);
+    }
+}
+
